@@ -1,12 +1,14 @@
 <template>
   <div>
-    
+    <SectionArtistCoaching/>
   </div>
 </template>
 
 <script>
+import SectionArtistCoaching from "./section1/SectionArtistCoaching.vue";
 export default {
-    name: 'AppMain',
+    name: "AppMain",
+    components: { SectionArtistCoaching }
 }
 </script>
 
