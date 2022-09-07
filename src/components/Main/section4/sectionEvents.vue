@@ -6,12 +6,22 @@
         <p>Let's Work Together</p>
     </div>
 
-    <div v-for="(events, index) in eventsList" :key="index" class="card-events">
-        <img :src='"@/images/artist-event-" + events.img + "-250x300.jpg"' alt="">
-        <div class="info-card-events">
-            <span>{{events.date}}</span>
-            <p>{{events.title}}</p>
-            <span><i class="fa-sharp fa-solid fa-location-dot"></i>{{events.location}}</span>
+    <div class="container-card">
+        <div v-for="(events, index) in eventsList1" :key="index" class="card-events">
+            <img :src='"@/images/artist-event-" + events.img + "-250x300.jpg"' alt="">
+            <div class="info-card-events">
+                <span>{{events.date}}</span>
+                <p>{{events.title}}</p>
+                <span><i class="fa-sharp fa-solid fa-location-dot"></i>{{events.location}}</span>
+            </div>
+        </div>
+        <div v-for="(events, index) in eventsList2" :key="index" class="card-events card-reverse">
+            <img :src='"@/images/artist-event-" + events.img + "-250x300.jpg"' alt="">
+            <div class="info-card-events">
+                <span>{{events.date}}</span>
+                <p>{{events.title}}</p>
+                <span><i class="fa-sharp fa-solid fa-location-dot"></i>{{events.location}}</span>
+            </div>
         </div>
     </div>
 
@@ -23,7 +33,7 @@ export default {
     name: 'sectionEvents',
     data(){
         return{
-            eventsList: [
+            eventsList1: [
                 {
                     img: '04',
                     date: 'NOV   22, 2020',
@@ -36,6 +46,9 @@ export default {
                     title: 'Painting Art Contest 2020',
                     location: 'New York, US'
                 },
+                
+            ],
+            eventsList2: [
                 {
                     img: '02',
                     date: 'NOV 23, 2020',
@@ -48,7 +61,7 @@ export default {
                     title: 'Street Performance: Call For Artist',
                     location: 'Illinois, US'
                 }
-            ]
+            ],   
         }
     }
 }
@@ -59,21 +72,29 @@ export default {
     text-align: center;
     margin: 110px 0;
 }
-
-.card-events{
+.container-card{
+    width: 1070px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
 
-    img{
-
+    .card-reverse{
+        flex-direction: row-reverse;
     }
 
-    .info-card-events{
-        padding:0 45px;
-        p{
-            padding: 15px 0;
+    .card-events{
+        display: flex;
+        align-items: center;
+        width: calc(100%/2);
+        padding: 25px 10px;
+    
+        .info-card-events{
+            padding:0 45px;
+            p{
+                padding: 15px 0;
+            }
         }
     }
 }
+
 </style>

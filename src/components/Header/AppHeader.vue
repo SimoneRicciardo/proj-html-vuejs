@@ -136,6 +136,8 @@ export default {
         li{
           list-style: none;
           padding: 0 15px;
+          font-size: 14px;
+          font-weight: 400;
         }
     }
     div a{
