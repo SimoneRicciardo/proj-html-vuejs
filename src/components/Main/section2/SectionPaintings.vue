@@ -2,27 +2,31 @@
   <div class="container-paintings">
     <div class="title-paintings">
         <span>Artist coaching</span>
-        <span>Latest Online Courses</span>
+        <h2>Latest Online Courses</h2>
     </div>
 
     <div class="container-card-paintings">
         <div class="card-paintings" v-for="(paintings, index) in paintingsList" :key="index">
             <img :src='"@/images/artist-course-" + paintings.img + "-480x480.jpg"' alt="">
-            <span>{{paintings.price}}</span>
-            <span>{{paintings.title}}</span>
-            <div>
-                <a>
-                    <i class="fa-solid fa-file-lines"></i>{{paintings.lessons}}Lessons
-                </a>
-                <a>
-                    <i class="fa-regular fa-user"></i>{{paintings.students}}Students
-                </a>
+            <div class="description-card">
+                <span class="price">{{paintings.price}}</span>
+                <h4 class="title">{{paintings.title}}</h4>
+                <div>
+                    <a>
+                        <i class="fa-solid fa-file-lines"></i>{{paintings.lessons}} Lessons
+                    </a>
+                    <a>
+                        <i class="fa-regular fa-user"></i>{{paintings.students}} Students
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-    <div>
-        <button>View all courses</button>
+
+    <div class="btn-paintings">
+        <button class="btn btn-light-orange">View all courses</button>
     </div>
+    
   </div>
 </template>
 
@@ -95,26 +99,65 @@ export default {
 </script>
 
 <style lang="scss">
-.title-paintings{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 110px 0;
-}
 
-.container-card-paintings{
+.container-paintings{
 
-    width: 1700px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+    background: url(@/images/artist-shape-01-600x577.png) -164px 434px,
+                url(@/images/artist-shape-01-600x577.png) right 10px;
+    background-repeat: no-repeat;
 
-    .card-paintings{
+    .title-paintings{
         display: flex;
         flex-direction: column;
-        width: calc(100%/4);
-        padding: 25px;
+        align-items: center;
+        text-align: center;
+        margin: 90px 0;
+    
+        h2{
+            padding-top:20px ;
+        }
+    }
+    
+    .container-card-paintings{
+    
+        width: 1700px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+    
+        .card-paintings{
+            display: flex;
+            flex-direction: column;
+            width: calc(100%/4);
+            padding: 25px;
+    
+            .description-card{
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                h4, span{
+                    padding: 10px 0;
+                }
+                a{
+                    font-size: 13px;
+                    color: rgb(106, 106, 107);
+                    i{
+                        padding: 0 10px;
+                    }
+                }
+            }
+    
+            .price{
+                color: rgb(255, 123, 0) ;
+                font-weight: 800;
+            }
+        }
+    }
+    .btn-paintings{
+        display: flex;
+        justify-content: center;
+        padding-top: 55px;
     }
 }
+
 </style>

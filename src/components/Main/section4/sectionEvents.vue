@@ -1,9 +1,9 @@
 <template>
-<div>
+<div class="container-events">
     
     <div class="Events-titile">
         <span>Upcoming Events</span>
-        <p>Let's Work Together</p>
+        <h2>Let's Work Together</h2>
     </div>
 
     <div class="container-card">
@@ -11,7 +11,7 @@
             <img :src='"@/images/artist-event-" + events.img + "-250x300.jpg"' alt="">
             <div class="info-card-events">
                 <span>{{events.date}}</span>
-                <p>{{events.title}}</p>
+                <h4>{{events.title}}</h4>
                 <span><i class="fa-sharp fa-solid fa-location-dot"></i>{{events.location}}</span>
             </div>
         </div>
@@ -19,7 +19,7 @@
             <img :src='"@/images/artist-event-" + events.img + "-250x300.jpg"' alt="">
             <div class="info-card-events">
                 <span>{{events.date}}</span>
-                <p>{{events.title}}</p>
+                <h4>{{events.title}}</h4>
                 <span><i class="fa-sharp fa-solid fa-location-dot"></i>{{events.location}}</span>
             </div>
         </div>
@@ -68,33 +68,48 @@ export default {
 </script>
 
 <style lang="scss">
-.Events-titile{
-    text-align: center;
-    margin: 110px 0;
-}
-.container-card{
-    width: 1070px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
 
-    .card-reverse{
-        flex-direction: row-reverse;
+.container-events{
+    background: url(@/images/artist-shape-01-600x577.png) -776px 313px,
+                url(@/images/artist-shape-01-600x577.png) right 169px,
+                url(@/images/maxcoach-shape-13-150x150.png)right 279px;
+    background-size: 954px 773px, 420px, 265px;
+    background-repeat:no-repeat ;
+    .Events-titile{
+        text-align: center;
+        margin: 110px 0;
+        h2{
+            padding-top: 15px;
+        }
     }
-
-    .card-events{
+    .container-card{
+        width: 1070px;
+        margin: 0 auto;
         display: flex;
-        align-items: center;
-        width: calc(100%/2);
-        padding: 25px 10px;
+        flex-wrap: wrap;
     
-        .info-card-events{
-            padding:0 45px;
-            p{
-                padding: 15px 0;
+        .card-reverse{
+            flex-direction: row-reverse;
+        }
+    
+        .card-events{
+            display: flex;
+            align-items: center;
+            width: calc(100%/2);
+            padding: 25px 10px;
+        
+            .info-card-events{
+                padding:0 45px;
+                span{
+                    color: rgb(106, 106, 107);
+                }
+                h4{
+                    padding: 15px 0;
+                }
             }
         }
     }
 }
+
 
 </style>

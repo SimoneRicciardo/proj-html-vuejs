@@ -1,12 +1,12 @@
 <template>
   <div class="conatiner-footer">
     <div class="container-info-footer">
-      <div>
-        <p>Address</p>
+      <div class="adress">
+        <h4>Address</h4>
         <p>382 NE 191st ST # 87394 Miami, FL 33179-3899</p>
         <p>+1(305)547-9909 (9am - 5pm EST,  Monday-Friday)</p>
         <a href="">support@maxcoach.com</a>
-        <div>
+        <div class="link-social-footer">
           <a href=""><i class="fa-brands fa-square-facebook"></i></a>
           <a href=""><i class="fa-brands fa-twitter"></i></a>
           <a href=""><i class="fa-brands fa-instagram"></i></a>
@@ -62,16 +62,35 @@ export default {
   .container-info-footer, .list-link-footer{
     display: flex;
     justify-content: center;
-  
+    
+    a{
+      text-decoration: none;
+      color: rgb(106, 106, 107);
+    }
+    .adress{
+      p{
+        padding: 10px 0;
+      }
+    }
+    .link-social-footer{
+      padding: 15px 0;
+      a{
+        padding-right: 5px;
+      }
+    }
     ul{
       padding:0 60px ;
-  
+
+      h4{
+        padding-bottom: 10px;
+      }
+      
       li{
         list-style: none;
-        padding: 5px  0;
+        padding: 10px  0;
         a{
           text-decoration: none;
-          color: black;
+          color: rgb(106, 106, 107);
         }
       }
     }
@@ -83,8 +102,15 @@ export default {
   }
   .photo-footer{
     padding:0 25px;
+    a{
+      color: orange;
+    }
+    img{
+      padding-top: 20px;
+    }
   }
   .copyright-footer{
+    color: rgb(106, 106, 107);
     text-align: center;
     padding-top: 60px;
     i{
